@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //最流氓的方式
+        // let list = `
+        // <ul>
+        // <li>java</li>
+        // <li>Python</li>
+        // <li>JavaScript</li>
+        // <li>Swift</li>
+        // </ul>`
+
+        // document.body.innerHTML = list
+        // document.querySelector("li").textContent = "Java1"
+        //老方法
+        // const oElement = document.createElement('ul')
+        // document.body.innerHTML = "<ul></ul>"
+        // document.body.appendChild(oElement)
+
+        //最古老的方法
+        //文档碎片
+        const oFrag = document.createDocumentFragment()
+        const oElement = document.createElement('ul')
+        // const oItem = document.createElement('li')
+        // const oText = document.createTextNode('Java')
+        // oItem.appendChild(oText)
+        // oElement.appendChild(oItem)
+        // document.body.appendChild(oElement)
+
+        const createHTML = (elementName,text) =>{
+            let oItem = document.createElement(elementName)
+            let oText = document.createTextNode(text)
+            oItem.appendChild(oText)
+            document.body.appendChild(oItem)
+        }
+
+        createHTML('li','Java')
+        createHTML('li','JavaScript')
+        createHTML('li','Python')
+        createHTML('li','Swift')
+
+        document.body.appendChild(oFrag)
+    </script>
+</body>
+</html>

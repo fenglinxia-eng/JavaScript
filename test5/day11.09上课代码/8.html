@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">
+        <p id="myPara1">test1</p>
+        <p id="myPara2">test2</p>
+    </div>
+    <script>
+        const oDiv = document.querySelector('#myDiv')
+        console.log(oDiv.parentNode)
+        console.log(oDiv.parentElement)
+        console.log('子元素的数目：',oDiv.childElementCount)
+        console.log('子节点的数目：',oDiv.childNodes.length)
+        console.log(oDiv.children)
+        // 一般不用这个，因为会有前面的节点console.log(oDiv.childNodes)
+
+        console.log(oDiv.firstChild.innerHTML)
+        console.log(oDiv.lastChild.innerHTML)
+
+        console.log(oDiv.firstElementChild.innerHTML)
+        console.log(oDiv.lastElementChild.innerHTML)
+
+        const oP2 = document.querySelector('#myPara2')
+        console.log(oP2.previousElementSibling.textContent)
+
+        console.log('节点类型为：',oP2.nodeType,'节点值为：',oP2.nodeName,'节点值为：',oP2.nodeValue)
+
+        
+    </script>
+</body>
+</html>
