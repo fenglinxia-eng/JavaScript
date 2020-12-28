@@ -35,15 +35,35 @@ let avg = function mean1(...numbers){
     return sum / arguments.length;
 }
 console.log("平均值为："+avg(1,2,3,4));
+//==
+function mean (...args){
+    let sum = 0;
+    for(let arg of args){
+        sum = arg + sum
+    }
+    return sum /args.length
+}
+console.log(mean(1,2,3,4,5));
 //(2).请编写函数mean2()，使用数组的reduce()函数改写mean1(),让代码更加精简
 const mean2 = (...args) => {
     const sum = args.reduce((pre,cur) => pre + cur)
     return sum / args.length
 }
 console.log("平均值为："+mean2(2,3,4,5));
+//=
+function mean1(...args){
+    return args.reduce((sum,val) => sum + val) /args.length
+}
+console.log(mean1(1,2,3,4,5));
 //(3).请在第二步的基础上编写函数mean3()，实现只对数组的偶数求平均值
 const mean3 = (...args) => {
     const evens = args.filter(i => i % 2 == 0)
     return mean2(...evens)
 }
 console.log("平均值为："+mean3(2,3,4,5));
+//=
+function mean2(...args){
+    const args1 = args.filter(x => x%2 == 0)
+    return args1.reduce((sum,val) => sum + val) /args1.length
+}
+console.log(mean2(1,2,3,4,5));
